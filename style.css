@@ -54,6 +54,6 @@ li {
   margin-bottom: 20px;
 }
 .footnote {
-  position: center;
+  position: block;
   padding: 15px;
 }
