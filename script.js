@@ -72,6 +72,13 @@ function convertToCelsius(event) {
   temperatureElement.innerHTML = 19;
 }
 
+function displayfahrenheitWeatherCondition (event){
+    event.preventDefault();
+    let fahrenheitWeatherCondition = (25 * 9) / 5 + 32;
+    alert (fahrenheitWeatherCondition);
+
+}
+
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
@@ -83,3 +90,6 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 searchCity("Germantown");
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayfahrenheitWeatherCondition);
