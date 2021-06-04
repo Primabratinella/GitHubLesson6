@@ -76,6 +76,8 @@ function displayfahrenheitWeatherCondition (event){
     event.preventDefault();
     let fahrenheitWeatherCondition = (25 * 9) / 5 + 32;
     alert (fahrenheitWeatherCondition);
+    let temperatureElement = document.querySelector ("#temperature");
+    temperatureElement.innerHTML = Math.round(fahrenheitWeatherCondition);
 
 }
 
