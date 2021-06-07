@@ -58,7 +58,7 @@ function searchLocation(position) {
 function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
-}
+  }
 
 function convertToFahrenheit(event) {
   event.preventDefault();
@@ -70,18 +70,29 @@ function convertToCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = 19;
+  celsiusLink.innerHTML = `°C`;
+  fahrenheitLink.innerHTML = `°F`;
 }
 
-function displayfahrenheitWeatherCondition (event){
+function changefahrenheitWeatherCondition (event){
     event.preventDefault();
-    let fahrenheitWeatherCondition = (25 * 9) / 5 + 32;
-    alert (fahrenheitWeatherCondition);
+    let fahrenheitWeatherCondition = Math.round((currentPositionTemp * 9) / 5 + 32);
     let temperatureElement = document.querySelector ("#temperature");
-    temperatureElement.innerHTML = Math.round(fahrenheitWeatherCondition);
+    celsiusLink.innerHTML = `${fahrenheit}`;
+    temperatureElement.innerHTML = ``;
+
+function changecelsiusWeatherCondition (event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector ("#temperature");
+    celsiusLink.innerHTML = currentLocationTemp;
+    fahrenheitLink.innerHTML = ``;
+}
 
 }
 
 let dateElement = document.querySelector("#date");
+dateElement.innerHTML = formatDate(currenttTime);
+
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
 
@@ -94,4 +105,7 @@ currentLocationButton.addEventListener("click", getCurrentLocation);
 searchCity("Germantown");
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayfahrenheitWeatherCondition);
+fahrenheitLink.addEventListener("click", changefahrenheitWeatherCondition);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", changecelsiusWeatherCondition);
