@@ -74,14 +74,14 @@ function convertToCelsius(event) {
   fahrenheitLink.innerHTML = `°F`;
 }
 
-function changefahrenheitWeatherCondition (event){
+function displayfahrenheitWeatherCondition (event){
     event.preventDefault();
     let fahrenheitWeatherCondition = Math.round((currentPositionTemp * 9) / 5 + 32);
     let temperatureElement = document.querySelector ("#temperature");
     celsiusLink.innerHTML = `${fahrenheit}`;
     temperatureElement.innerHTML = ``;
 
-function changecelsiusWeatherCondition (event) {
+function displaycelsiusWeatherCondition (event) {
     event.preventDefault();
     let temperatureElement = document.querySelector ("#temperature");
     celsiusLink.innerHTML = currentLocationTemp;
@@ -105,7 +105,7 @@ currentLocationButton.addEventListener("click", getCurrentLocation);
 searchCity("Germantown");
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", changefahrenheitWeatherCondition);
+fahrenheitLink.addEventListener("click", displayfahrenheitWeatherCondition);
 
 let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", changecelsiusWeatherCondition);
+celsiusLink.addEventListener("click", displaycelsiusWeatherCondition);
