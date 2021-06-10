@@ -25,6 +25,11 @@ li {
   list-style: none;
 }
 
+img {
+  width: 50%;
+  height: 50%;
+}
+
 .weather-app {
   border: 1px solid #9a2ec5;
   padding: 20px;
