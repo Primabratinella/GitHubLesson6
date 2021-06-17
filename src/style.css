@@ -4,7 +4,7 @@ body {
 }
 
 h1 {
-  color: #867900e5;
+  color: #800000;
   font-size: 24px;
   font-weight: 100;
   line-height: 28px;
@@ -30,6 +30,10 @@ img {
   height: 50%;
 }
 
+small {
+  margin: 10px auto;
+}
+
 .weather-app {
   border: 1px solid #9a2ec5;
   padding: 20px;
@@ -38,6 +42,23 @@ img {
   max-width: 600px;
 }
 
+.weather-forecast {
+  margin-top: 10;
+  text-align: center;
+}
+
+.weather-forecast-date {
+  font-size: 17px;
+  color: #0a1347;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.5;
+}
+.weather-forecast-temperature {
+  font-size: 14;
+  color: #800000;
+}
 .weather-icon {
   height: 20px;
   width: 20x;
