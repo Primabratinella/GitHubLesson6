@@ -90,7 +90,7 @@ function displayWeatherCondition(response) {
 
 function searchCity(city) {
   let apiKey = "32560c27e8e23a3db17cfaff2b468cd2";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayWeatherCondition);
 
 }
@@ -104,7 +104,7 @@ function handleSubmit(event) {
 
 function searchLocation(position) {
   let apiKey = "32560c27e8e23a3db17cfaff2b468cd2";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
   
@@ -134,11 +134,6 @@ function displayfahrenheitTemperature (event){
   event.preventDefault();
   let temperatureElement = document.querySelector ("#temperature");
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-
 }
-let fahrenheitTemperature = null;
-
-
-
 searchCity("Germantown");
 
