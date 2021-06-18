@@ -44,6 +44,12 @@ function displayForecast () {
   forecastElement.innerHTML= forecastHTML;
 }
 
+function getForecast (coordinates) {
+  console.log(coordinates);
+  let apiKey = "32560c27e8e23a3db17cfaff2b468cd2";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+}
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   let searchCity = "Germantown";
@@ -58,13 +64,14 @@ function displayWeatherCondition(response) {
     response.data.weather[0].main;
 
   let iconElement = document.querySelector("#icon");
+  celsiusTemperature = response.data.main.temp;
+
   iconElement.setAttribute ("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-  
   iconElement.setAttribute (
-    "alt", response.data.weather[0].main
+    "alt", response.data.weather[0].description
   );
 
-  celsiusTemperature = response.data.main.temp;
+  getForecast (response.data.coord);
 
 
 }
